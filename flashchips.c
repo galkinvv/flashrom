@@ -7577,7 +7577,7 @@ const struct flashchip flashchips[] = {
 		.bustype	= BUS_SPI,
 		.manufacture_id	= ISSI_ID_SPI,
 		.model_id	= ISSI_IS25WQ040,
-		.total_size	= 4096,
+		.total_size	= 512,
 		.page_size	= 256,
 		/* OTP: 1024B total; read 0x48; write 0x42 */
 		/* QPI enable 0x35, disable 0xF5 */
@@ -7588,22 +7588,22 @@ const struct flashchip flashchips[] = {
 		.block_erasers	=
 		{
 			{
-				.eraseblocks = { {4 * 1024, 1024} },
+				.eraseblocks = { {4 * 1024, 128} },
 				.block_erase = spi_block_erase_20,
 			}, {
-				.eraseblocks = { {4 * 1024, 1024} },
+				.eraseblocks = { {4 * 1024, 128} },
 				.block_erase = spi_block_erase_d7,
 			}, {
-				.eraseblocks = { {32 * 1024, 128} },
+				.eraseblocks = { {32 * 1024, 16} },
 				.block_erase = spi_block_erase_52,
 			}, {
-				.eraseblocks = { {64 * 1024, 64} },
+				.eraseblocks = { {64 * 1024, 8} },
 				.block_erase = spi_block_erase_d8,
 			}, {
-				.eraseblocks = { {4 * 1024 * 1024, 1} },
+				.eraseblocks = { {512 * 1024, 1} },
 				.block_erase = spi_block_erase_60,
 			}, {
-				.eraseblocks = { {4 * 1024 * 1024, 1} },
+				.eraseblocks = { {512 * 1024, 1} },
 				.block_erase = spi_block_erase_c7,
 			}
 		},
